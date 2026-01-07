@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ lang: 'en' }" :class="{ 'dark': true }" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mahdi Bijari | Backend Developer</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          animation: {
+            fade: 'fadeIn 0.8s ease-out',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: 0, transform: 'translateY(10px)' },
+              '100%': { opacity: 1, transform: 'translateY(0)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Alpine -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Vazirmatn:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-zinc-950 text-zinc-200 font-[Inter] dark">
+
+<div class="max-w-4xl mx-auto px-6 py-16 animate-fade">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center mb-16">
+    <h1 class="text-xl font-semibold">Mahdi Bijari</h1>
+    <button
+      @click="lang = lang === 'en' ? 'fa' : 'en'"
+      class="text-sm px-3 py-1 rounded border border-zinc-700 hover:bg-zinc-800 transition">
+      FA / EN
+    </button>
+  </header>
+
+  <!-- Hero -->
+  <section class="mb-16">
+    <h2 class="text-3xl md:text-4xl font-semibold mb-4">
+      Backend Developer
+    </h2>
+
+    <p class="text-zinc-400 max-w-2xl"
+       x-text="lang === 'en'
+        ? 'PHP & Laravel developer focused on scalable backend systems, WordPress solutions, and modern DevOps practices.'
+        : 'توسعه‌دهنده بک‌اند با تمرکز بر PHP، لاراول، راهکارهای وردپرس و زیرساخت‌های مدرن نرم‌افزاری.'">
+    </p>
+
+    <div class="flex gap-4 mt-6 text-sm">
+      <a href="https://github.com/mahdiJD" class="hover:text-white transition">GitHub</a>
+      <a href="#" class="hover:text-white transition">LinkedIn</a>
+      <a href="mailto:your@email.com" class="hover:text-white transition">Email</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="mb-16">
+    <h3 class="text-xl font-semibold mb-4"
+        x-text="lang === 'en' ? 'About Me' : 'درباره من'"></h3>
+
+    <p class="text-zinc-400 leading-relaxed"
+       x-text="lang === 'en'
+       ? 'Computer Engineering graduate (Software) with freelance experience in medical systems (HIS), educational platforms, e-commerce websites, and backend services. Focused on clean architecture, performance, security, and production-ready deployments.'
+       : 'فارغ‌التحصیل مهندسی کامپیوتر (نرم‌افزار) با تجربه فریلنسری در سامانه‌های پزشکی، آموزشی، فروشگاهی و سرویس‌های بک‌اند. تمرکز من بر معماری تمیز، کارایی، امنیت و استقرار حرفه‌ای نرم‌افزار است.'">
+    </p>
+  </section>
+
+  <!-- Tech Stack -->
+  <section class="mb-16">
+    <h3 class="text-xl font-semibold mb-6"
+        x-text="lang === 'en' ? 'Tech Stack' : 'مهارت‌ها'"></h3>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm text-zinc-300">
+      <div>PHP / Laravel</div>
+      <div>WordPress (Plugins)</div>
+      <div>MySQL / PostgreSQL</div>
+      <div>MongoDB / Redis</div>
+      <div>Docker / CI-CD</div>
+      <div>Nginx / Reverse Proxy</div>
+      <div>Linux / Bash</div>
+      <div>MQTT</div>
+      <div>Python / Alpine.js</div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="mb-16">
+    <h3 class="text-xl font-semibold mb-6"
+        x-text="lang === 'en' ? 'Selected Projects' : 'پروژه‌ها'"></h3>
+
+    <div class="space-y-6 text-zinc-400 text-sm">
+
+      <div>
+        <strong class="text-zinc-200">Medical HIS System</strong><br/>
+        Backend system for a private medical clinic (HIS).
+      </div>
+
+      <div>
+        <strong class="text-zinc-200">Language Institute Platform</strong><br/>
+        Course selling and management system.
+      </div>
+
+      <div>
+        <strong class="text-zinc-200">E-commerce Website</strong><br/>
+        Custom WordPress-based online store.
+      </div>
+
+      <div>
+        <strong class="text-zinc-200">Bachelor Thesis Project</strong><br/>
+        Remote ESP microcontroller management using MQTT.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-xs text-zinc-500 border-t border-zinc-800 pt-6">
+    © 2026 Mahdi Bijari — Built with HTML & Tailwind
+  </footer>
+
+</div>
+
+</body>
+</html>
